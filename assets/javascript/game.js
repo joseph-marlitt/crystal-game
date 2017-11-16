@@ -1,88 +1,71 @@
-//basic alert 
-var targetNumber= 12 + Math.floor(Math.random() * 30);
-var counter = 0;
-var counterOptions = [1, 2, 3,];
-var bananaIncrement = [];
-var orangeIncrement = [];
-var blueberryIncrement = []
-
-function startgame (){
-
-function gen4Numbers() {
-    var counterOptions = [];
-    while (counterOptions.length < 4) {
-        var newNr = (parseInt(Math.random() * 4))+1;
-        if (counterOptions.indexOf(newNr) == -1) {
-            counterOptions.push(newNr);
-        }
-    console.log(counterOptions);
+$(document).ready(function() {
+	//Global Variables
+	var counter = 0;
+	var targetNumber;
+	var wins = 0;
+	var losses = 0;
+	var banana = 1 + Math.floor(Math.random() * 12);
+	var orange = 1 + Math.floor(Math.random() * 12);
+	var blueberry = 1 + Math.floor(Math.random() * 12);
+	var cherry = 1 + Math.floor(Math.random() * 12);
+	$("#number-to-guess").hide(targetNumber);
+	//Variables that change on game start
+	function startGame(){
+		counter = 0;
+		targetNumber = 19 + Math.floor(Math.random() * 120);
+		$("#number-to-guess").text(targetNumber);
+		
+		banana = 1 + Math.floor(Math.random() * 12);
+		orange = 1 + Math.floor(Math.random() * 12);
+		blueberry = 1 + Math.floor(Math.random() * 12);
+		cherry = 1 + Math.floor(Math.random() * 12);
+		
+		//Add Wins/Losses to the page.
 	}
-    
-  bananaIncrement = counterOptions.indexOf[0];
-blueberryIncrement = counterOptions.indexOf[1]
-orangeIncrement = counterOptions.indexOf[2]
-}
+		//How we are determining the result of the game.
+	$("#start").on("click", function(){
+		startGame()
+	});
 
-// var rand = counterOptions[Math.floor(Math.random() * counterOptions.length)];
+	$("#number-to-guess").show(targetNumber);
+		$("#cherry").on("click", function() {
+			counter += cherry;
+			alert("Your new score is " + counter);
+			console.log("added " + cherry);
+			console.log("Total is: " + counter);
+		});
 
-// var randomArray = [rand, rand, rand];
-// console.log(randomArray);
+		$("#orange").on("click", function() {
+			counter += orange;
+			alert("Your new score is " + counter);
+			console.log("added " + orange);
+			console.log("Total is: " + counter);	
+		});
 
+		$("#blueberry").on("click", function() {
+			counter += blueberry;
+			alert("Your new score is " + counter);
+			console.log("added " + blueberry);
+			console.log("Total is: " + counter);	
+		});
 
-
-
-
-$("#orange").on("click", function() {
-
-	counter += orangeIncrement;
-	alert("Your new score is " + counter);
-	console.log("added " + orangeIncrement);
-	console.log("Total is" + counter);
-
-	if (counter === targetNumber) {
-		alert("You win!");
-	}
-
-	else if (counter >= targetNumber) {
-		alert("You lose!");
-	}
-
+		$("#banana").on("click", function() {
+			counter += banana;
+			alert("Your new score is " + counter);
+			console.log("added " + banana);
+			console.log("Total is: " + counter);	
+		});	
+		// Decide if win or lose
+		$(".fruit-image").on("click", function() {
+			if (counter === targetNumber) {
+			wins++;
+			alert("You win!");
+			startGame();
+		}
+		else if (counter >= targetNumber) {
+			losses++;
+			alert("You lose!");
+			startGame();
+		}
+	})
 });
-
-$("#blueberry").on("click", function() {
-
-	counter += blueberryIncrement;
-	alert("Your new score is " + counter);
-	console.log("added " + blueberryIncrement);
-	console.log("Total is" + counter);
-
-	if (counter === targetNumber) {
-		alert("You win!");
-	}
-
-	else if (counter >= targetNumber) {
-		alert("You lose!");
-	}
-
-});
-
-$("#number-to-guess").text("The number to guess is: " + targetNumber);
-
-
-$("#banana").on("click", function() {
-
-	counter += bananaIncrement;
-	alert("Your new score is " + counter);
-	console.log("added " + bananaIncrement);
-	console.log("Total is" + counter);
-
-	if (counter === targetNumber) {
-		alert("You win!");
-	}
-
-	else if (counter >= targetNumber) {
-		alert("You lose!");
-	}
-
-});
-}

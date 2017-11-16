@@ -1,13 +1,14 @@
 #container{
 	margin: auto;
 	width: 100%;
+	height: 100%;
 }
 .bg{
     /* The image used */
-    background-image: ("assets/images/background.png");
+    background-image: url("../images/background.png");
 
     /* Full height */
-    height: 100%; 
+    height: 800px; 
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -15,30 +16,46 @@
     background-size: cover;
 }
 #number-to-guess {
-	font-size: 24px;
-	text-align: left;
+	margin-left: 10px;
+	font-size: 40px;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 h1 {
+	margin-left: 25px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 40px;
 }
 header {
+	font-weight: bold;
 	font-size: 64px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: center;
+	color: chocolate;
+}
+.row {
+	color: chocolate;
+}
+#wins, #losses {
+	text-align: center;
+	font-size: 20px;
 }
 #start {
 	font-family: 'Open Sans Condensed', sans-serif;
 	padding: 15px;
-    color: #444;
-    background-color: #77777777;
+    color: chocolate;
+    background-color: #7777;
     font-size: 24px;
     position: relative;
     left: 45%;
 }
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-
+#start:hover{
+	background-color: chocolate;
+	color: #333333;
+}
+#instructions {
+	text-align: center;
+	font-size: 24px;
+}
 .fruit-image {
 	width: 150px;
 	height: 150px;

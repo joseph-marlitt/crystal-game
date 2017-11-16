@@ -14,15 +14,17 @@ $(document).ready(function() {
 		counter = 0;
 		targetNumber = 19 + Math.floor(Math.random() * 120);
 		$("#number-to-guess").text(targetNumber);
-		
+		$("#instructions").text('Click a fruit to "peel" back the layers of mystery! Get the number exact and you win!')
 		banana = 1 + Math.floor(Math.random() * 12);
 		orange = 1 + Math.floor(Math.random() * 12);
 		blueberry = 1 + Math.floor(Math.random() * 12);
 		cherry = 1 + Math.floor(Math.random() * 12);
 		
 		//Add Wins/Losses to the page.
+		$("#wins").text("Wins: " + wins);
+		$("#losses").text("Losses: " + losses);
 	}
-		//How we are determining the result of the game.
+		//Fruit clicking functions:
 	$("#start").on("click", function(){
 		startGame()
 	});
